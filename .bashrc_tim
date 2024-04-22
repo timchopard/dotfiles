@@ -1,3 +1,14 @@
+# Paste the following into .bashrc  #
+# and uncomment to import these     #
+# functions                         #
+##### Tim Custom stuff ##############
+##### Import from .bashrc_tim      ##
+##if [ -f ~/.bashrc_tim ]; then    ##
+##    . ~/.bashrc_tim              ##
+##fi                               ##
+##### End Tim Custom stuff ##########
+
+
 # Command prompt
 green=$(tput setaf 2)   # \e[0;32m
 brown=$(tput setaf 3)   # \e[1;33m
@@ -9,6 +20,12 @@ PS1='\[$green\][\A] \[$brown\]\W \[$purple\]>>\[$reset\] '
 function mkdircd {
     mkdir $1
     cd $1
+}
+
+# Count the files in a directory
+function numfiles {
+    N="$(ls -R $1 | wc -l)";
+    echo "$N files in $PWD/$1/";
 }
 
 # Aliases
