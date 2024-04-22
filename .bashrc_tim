@@ -1,0 +1,16 @@
+# Command prompt
+green=$(tput setaf 2)   # \e[0;32m
+brown=$(tput setaf 3)   # \e[1;33m
+purple=$(tput setaf 5)  # \e[1;35m
+reset=$(tput sgr0)      # \e[m
+PS1='\[$green\][\A] \[$brown\]\W \[$purple\]>>\[$reset\] '
+
+# Make and move into directory
+function mkdircd {
+    mkdir $1
+    cd $1
+}
+
+# Aliases
+alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
+
