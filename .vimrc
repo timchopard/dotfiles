@@ -1,6 +1,4 @@
 syntax enable
-colorscheme gruvbox
-set background=dark
 
 " Set smart search (only case sensitive if incl. upper case)
 set ignorecase
@@ -68,3 +66,7 @@ nmap <F2> :NERDTreeToggle<CR>   " Toggle the filetree with F2
 
 """ Startify Settings
 source ~/.vimrc-start
+
+""" Appearance Settings
+colorscheme gruvbox
+set background=dark
