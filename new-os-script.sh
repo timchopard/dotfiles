@@ -72,6 +72,14 @@ fi
 # Set up vim
 read -p "Set up Vim? " -n 1 -r
 if [[ $REPLY =~ ^[Yy]$ ]]; then
+    if ! command -v vim 2>&1 >/dev/null; then
+        setupEcho "Vim is not installed. Installing.."
+        sudo apt install vim -y
+    fi
+    mkdir -p ~/.vim/bundle
+    cd ~/.vim/bundle
+    git clone https://github.com/VundleVim/Vundle.vim.git Vundle.vim
+    cd -
     curl https://raw.githubusercontent.com/timchopard/dotfiles/refs/heads/main/.vimrc -o ~/.vimrc
     curl https://raw.githubusercontent.com/timchopard/dotfiles/refs/heads/main/.vimrc-start -o ~/.vimrc-start
     vim +PluginInstall +qall
