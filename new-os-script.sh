@@ -49,7 +49,7 @@ read -p "Install Alacritty and Starship? " -n 1 -r
 if [[ $REPLY =~ ^[Yy]$ ]]; then
     setupEcho "Installing Alacritty"
     cargo install alacritty
-    curl https://raw.githubusercontent.com/timchopard/dotfiles/refs/heads/main/.alacritty.toml >> ~/.alacritty.toml
+    curl https://raw.githubusercontent.com/timchopard/dotfiles/refs/heads/main/.alacritty.toml -o ~/.alacritty.toml
     sudo cp target/release/alacritty /usr/local/bin 
     sudo cp extra/logo/alacritty-term.svg /usr/share/pixmaps/Alacritty.svg
     sudo desktop-file-install extra/linux/Alacritty.desktop
