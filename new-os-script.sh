@@ -61,7 +61,7 @@ if [[ $REPLY =~ ^[Yy]$ ]]; then
         mkdir ~/.fonts
     fi
     unzip FiraMono.zip -d temp-fonts
-    cp temp-fonts/*.oft ~/.fonts/
+    cp temp-fonts/*.otf ~/.fonts/
     rm FiraMono.zip
     rm -r temp-fonts
     fc-cache -f -v
