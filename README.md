@@ -21,3 +21,12 @@ sudo apt install curl -y
 ```
 source <(curl -s https://raw.githubusercontent.com/timchopard/dotfiles/refs/heads/main/new-os-script.sh)
 ```
+
+### Potential Issues:
+#### pkgconfig
+```
+sudo apt install pkgconfig
+```
+```
+sudo apt install libfontconfig1-dev
+```
