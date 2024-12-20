@@ -50,6 +50,10 @@ if [[ $REPLY =~ ^[Yy]$ ]]; then
     setupEcho "Installing Alacritty"
     cargo install alacritty
     curl https://raw.githubusercontent.com/timchopard/dotfiles/refs/heads/main/.alacritty.toml >> ~/.alacritty.toml
+    sudo cp target/release/alacritty /usr/local/bin 
+    sudo cp extra/logo/alacritty-term.svg /usr/share/pixmaps/Alacritty.svg
+    sudo desktop-file-install extra/linux/Alacritty.desktop
+    sudo update-desktop-database
     setupEcho "Installing Fonts"
     wget https://github.com/ryanoasis/nerd-fonts/releases/download/v3.3.0/FiraMono.zip
     mkdir temp-fonts
