@@ -1,0 +1,6 @@
+# Python aliases
+alias newvenv='python3 -m venv .venv && source .venv/bin/activate'
+alias actvenv='source .venv/bin/activate'
+
+# Starship
+eval "$(starship init bash)"
