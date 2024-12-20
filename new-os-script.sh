@@ -76,10 +76,14 @@ if [[ $REPLY =~ ^[Yy]$ ]]; then
         setupEcho "Vim is not installed. Installing.."
         sudo apt install vim -y
     fi
-    mkdir -p ~/.vim/bundle
-    cd ~/.vim/bundle
-    git clone https://github.com/VundleVim/Vundle.vim.git Vundle.vim
-    cd -
+    setupEcho "Installing vim package manager.."
+    if [ ! -d ~/.vim/bundle ]; then
+        mkdir -p ~/.vim/bundle
+        cd ~/.vim/bundle
+        git clone https://github.com/VundleVim/Vundle.vim.git Vundle.vim
+        cd -
+    fi
+    setupEcho "Setting up vim preferences.."
     curl https://raw.githubusercontent.com/timchopard/dotfiles/refs/heads/main/.vimrc -o ~/.vimrc
     curl https://raw.githubusercontent.com/timchopard/dotfiles/refs/heads/main/.vimrc-start -o ~/.vimrc-start
     vim +PluginInstall +qall

@@ -50,6 +50,7 @@ filetype plugin indent on
 Plugin 'jiangmiao/auto-pairs'   " Pair completion
 Plugin 'preservim/nerdtree'     " File tree
 Plugin 'mhinz/vim-startify'     " Fancy start page when calling vim w/o file
+Plugin 'morhetz/gruvbox'        " Gruvbox color theme
 
 """ Pair Completion settings
 let g:AutoPairsShortcutToggle='<C-P>'
